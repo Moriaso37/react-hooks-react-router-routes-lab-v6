@@ -1,7 +1,14 @@
-import "./index.css";
-import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import routes from "./routes";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render();
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import routes from "./routes";
+import "./index.css"; // optional: for global styles, if you have it
+
+const router = createBrowserRouter(routes);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);

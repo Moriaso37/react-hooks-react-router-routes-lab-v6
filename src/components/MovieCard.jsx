@@ -1,13 +1,16 @@
-import {Link} from 'react-router-dom';
 
-function MovieCard({title}) {
-  
+function MovieCard({ movie }) {
   return (
-    <article>
-        <h2>{title}</h2>
-        {/* What should go here? */}
-    </article>
+    <div className="movie-card">
+      <h1>{movie.title}</h1>
+      <p>{movie.time}</p>
+      <div className="genres">
+        {movie.genres.map((genre, index) => (
+          <span key={index}>{genre}</span>
+        ))}
+      </div>
+    </div>
   );
-};
+}
 
 export default MovieCard;
